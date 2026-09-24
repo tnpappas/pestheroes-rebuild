@@ -12,18 +12,18 @@
 }
 
 :root {
-  --color-primary: #0d6efd;
-  --color-primary-dark: #0a4fba;
-  --color-secondary: #198754;
-  --color-secondary-dark: #146c3e;
-  --color-accent: #fd7e14;
-  --color-dark: #1a2b3c;
-  --color-text: #2d3b4e;
-  --color-muted: #6c7a8a;
-  --color-bg: #f8f9fb;
+  --color-primary: #012e95;
+  --color-primary-dark: #012475;
+  --color-secondary: #ba2425;
+  --color-secondary-dark: #9a1e1f;
+  --color-accent: #ba2425;
+  --color-dark: #0a1733;
+  --color-text: #1a2540;
+  --color-muted: #5a6a85;
+  --color-bg: #f6f8fc;
   --color-card: #ffffff;
-  --color-border: #e2e8f0;
-  --color-footer: #1a2b3c;
+  --color-border: #d8ddee;
+  --color-footer: #0a1733;
   --color-footer-text: #a8b5c4;
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -215,16 +215,15 @@ ul { list-style: none; }
 .logo:hover { color: var(--color-dark); }
 
 .logo-icon {
-  width: 36px;
-  height: 36px;
-  background: var(--color-primary);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .logo-text {
