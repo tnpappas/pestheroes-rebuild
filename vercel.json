@@ -1,0 +1,25 @@
+{
+  "redirects": [
+    { "source": "/hamptonroadspestcontrolservices", "destination": "/services.html", "permanent": true },
+    { "source": "/pest-control-hampton-roads", "destination": "/index.html", "permanent": true },
+    { "source": "/termite", "destination": "/termite.html", "permanent": true },
+    { "source": "/real-estate-wdi-inspections", "destination": "/real-estate-wdi.html", "permanent": true },
+    { "source": "/move-in-pest-treatment", "destination": "/move-in-treatment.html", "permanent": true },
+    { "source": "/seasonal-pest-control", "destination": "/seasonal-pest-control.html", "permanent": true },
+    { "source": "/crawlspace-moisture", "destination": "/crawlspace-moisture.html", "permanent": true },
+    { "source": "/mosquito-vector-control", "destination": "/mosquito-control.html", "permanent": true },
+    { "source": "/rodent-control-exclusion-programs", "destination": "/rodent-control.html", "permanent": true },
+    { "source": "/pest-control", "destination": "/services.html", "permanent": true },
+    { "source": "/repair-services", "destination": "/repair-services.html", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact.html", "permanent": true },
+    { "source": "/about-us", "destination": "/about.html", "permanent": true },
+    { "source": "/frequently-asked-questions", "destination": "/faq.html", "permanent": true },
+    { "source": "/referral-program", "destination": "/referral.html", "permanent": true },
+    { "source": "/privacy-policy", "destination": "/privacy-policy.html", "permanent": true },
+    { "source": "/blog", "destination": "/blog.html", "permanent": true },
+    { "source": "/llms", "destination": "/index.html", "permanent": true },
+    { "source": "/thank-you", "destination": "/contact.html", "permanent": true }
+  ],
+  "cleanUrls": false,
+  "trailingSlash": false
+}
