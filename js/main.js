@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
   if (quoteForm) {
     quoteForm.addEventListener('submit', function(e) {
       e.preventDefault();
+      // Honeypot: if the hidden field is filled, it's a bot
+      var honeypot = quoteForm.querySelector('input[name="website"]');
+      if (honeypot && honeypot.value) { return; }
       var success = document.getElementById('form-success');
       if (success) {
         success.classList.add('show');
