@@ -22,3 +22,5 @@ Thumbs.db
 
 # Hermes cache (if ever copied here)
 cache/
+.vercel
+.env*

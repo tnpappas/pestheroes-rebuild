@@ -1,0 +1,15 @@
+# Files that are not part of the deployed static site
+.git
+.github
+.gitignore
+.vercel
+.vercelignore
+docs
+HANDOFF.md
+README.md
+*.bat
+.netlify
+.env
+.env.*
+cache
+images/originals
