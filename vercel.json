@@ -2,14 +2,14 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/about-us", "destination": "/about", "permanent": true },
-    { "source": "/contact-us", "destination": "/contact", "permanent": true },
-    { "source": "/frequently-asked-questions", "destination": "/faq", "permanent": true },
-    { "source": "/hamptonroadspestcontrolservices", "destination": "/services", "permanent": true },
-    { "source": "/real-estate-wdi-inspections", "destination": "/real-estate-wdi", "permanent": true },
-    { "source": "/move-in-pest-treatment", "destination": "/move-in-treatment", "permanent": true },
-    { "source": "/mosquito-vector-control", "destination": "/mosquito-control", "permanent": true },
-    { "source": "/rodent-control-exclusion-programs", "destination": "/rodent-control", "permanent": true },
-    { "source": "/referral-program", "destination": "/referral", "permanent": true }
+    { "source": "/about-us", "destination": "/about", "statusCode": 301 },
+    { "source": "/contact-us", "destination": "/contact", "statusCode": 301 },
+    { "source": "/frequently-asked-questions", "destination": "/faq", "statusCode": 301 },
+    { "source": "/hamptonroadspestcontrolservices", "destination": "/services", "statusCode": 301 },
+    { "source": "/real-estate-wdi-inspections", "destination": "/real-estate-wdi", "statusCode": 301 },
+    { "source": "/move-in-pest-treatment", "destination": "/move-in-treatment", "statusCode": 301 },
+    { "source": "/mosquito-vector-control", "destination": "/mosquito-control", "statusCode": 301 },
+    { "source": "/rodent-control-exclusion-programs", "destination": "/rodent-control", "statusCode": 301 },
+    { "source": "/referral-program", "destination": "/referral", "statusCode": 301 }
   ]
 }
