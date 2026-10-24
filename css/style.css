@@ -578,7 +578,7 @@ body.theme-comic .hero::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: right center;
+  object-position: right top;
   z-index: 0;
 }
 
@@ -598,37 +598,46 @@ body.theme-comic .hero::after {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 72px 24px;
+  padding: 40px 24px;
 }
 
 .hero-scene .hero-content {
-  width: 45%;
-  max-width: 45%;
+  width: 32%;
+  max-width: 32%;
 }
 
 .hero-scene .hero-content h1 {
-  font-size: 2.6rem;
+  font-size: 2.35rem;
+  line-height: 1.05;
+  margin-bottom: 0.6rem;
 }
 
 .hero-scene .hero-content p {
-  max-width: 480px;
+  font-size: 16px;
+  line-height: 1.45;
+  margin-bottom: 0.85rem;
+  max-width: 100%;
+}
+
+.hero-scene .hero-cta-row {
+  margin-top: 8px;
 }
 
 .hero-subhead {
   font-family: var(--font-subhead);
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 0.5px;
   color: var(--color-yellow);
+  margin-bottom: 0.6rem;
 }
 
-/* Speech burst call link */
+/* Speech burst call link: sits in the open space between the copy column and Pete */
 .pete-call {
   position: absolute;
-  top: 40px;
-  left: 46.5%;
-  width: 440px;
-  max-width: 40%;
+  top: 24px;
+  left: calc(32% + 25px);
+  width: min(360px, calc(13% + 145px));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -678,10 +687,11 @@ body.theme-comic .hero::after {
 .pete-tab-call { display: none; }
 .pete-tab-tap { display: inline; }
 
-/* $29 badge, top right corner of the hero scene */
+/* $29 badge, bottom right of the hero scene so it stays clear of Pete's head */
 .hero-badge {
   position: absolute;
-  top: 24px;
+  top: auto;
+  bottom: 24px;
   right: 24px;
   width: 150px;
   height: 150px;
@@ -702,12 +712,11 @@ body.theme-comic .hero::after {
   .pete-tab-tap { display: none; }
 }
 
-/* narrower desktops: keep the burst clear of both the H1 and the $29 badge */
-@media (min-width: 1024px) and (max-width: 1399px) {
+/* 1024 to 1199: the copy column is narrow here, so the hero runs taller than 640 and the
+   scene scales up, which pulls Pete further left. The burst has to shrink to stay clear. */
+@media (min-width: 1024px) and (max-width: 1199px) {
   .pete-call {
-    left: 47%;
-    width: 420px;
-    max-width: 34%;
+    width: calc(60% - 440px);
   }
 }
 
@@ -733,6 +742,7 @@ body.theme-comic .hero::after {
   .hero-bg {
     position: relative;
     height: 340px;
+    object-position: 44% top;
   }
 
   .hero-fade {
@@ -742,7 +752,7 @@ body.theme-comic .hero::after {
   .hero-scene .hero-content {
     width: 100%;
     max-width: 100%;
-    padding: 32px 24px 0;
+    padding: 28px 24px 0;
     background: var(--color-navy);
   }
 
@@ -755,21 +765,33 @@ body.theme-comic .hero::after {
   }
 
   .pete-call {
-    top: 20px;
-    left: 20px;
-    width: 66%;
-    max-width: min(66%, 400px);
+    top: 16px;
+    left: 12px;
+    width: min(258px, calc(100% - 140px));
   }
 
+  /* the badge moves to the lower left of the scene so it cannot touch Pete's head */
   .hero-badge {
-    top: 12px;
-    right: 12px;
+    top: 236px;
+    bottom: auto;
+    left: 12px;
+    right: auto;
     width: 96px;
     height: 96px;
     padding: 10px;
     font-size: 0.56rem;
     line-height: 1.12;
   }
+}
+
+/* narrow phones: crop further right so Pete's head stays fully in frame */
+@media (max-width: 389px) {
+  .hero-bg { object-position: 52% top; }
+  .pete-call { width: min(258px, calc(100% - 156px)); }
+}
+
+@media (max-width: 339px) {
+  .hero-bg { object-position: 56% top; }
 }
 
 
