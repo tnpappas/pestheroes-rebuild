@@ -101,28 +101,44 @@
   </header>
 
   <!-- 1. Hero (comic cover) -->
-  <section class="hero halftone-bg">
-    <div class="container">
+  <section class="hero hero-scene">
+    <img class="hero-bg" src="/images/pete/hero-pete-yard-1344.webp" srcset="/images/pete/hero-pete-yard-1344.webp 1344w, /images/pete/hero-pete-yard-2688.webp 2688w" sizes="100vw" width="2688" height="1520" fetchpriority="high" alt="Pest Heroes Pete, the Pest Heroes mascot, standing in a Hampton Roads front yard">
+    <div class="hero-fade" aria-hidden="true"></div>
+    <div class="hero-inner">
       <div class="hero-content">
-        <div class="comic-burst" style="position:absolute;width:140px;height:140px;top:-10px;right:24px;z-index:2;font-size:0.72rem;line-height:1.15;">
-          $29 Termite and Moisture Evaluation. Credited toward any treatment.
-        </div>
         <h1>Pest Control in Virginia Beach &amp; Hampton Roads</h1>
-        <p style="font-family:var(--font-subhead);text-transform:uppercase;font-size:1.1rem;letter-spacing:0.5px;color:var(--color-yellow);">Hampton Roads has a pest problem. Pest Heroes is on the way.</p>
+        <p class="hero-subhead">Hampton Roads has a pest problem. Pest Heroes is on the way.</p>
         <p>Protecting Virginia Beach, Norfolk, Chesapeake, and Hampton Roads homes from termites, mosquitoes, rodents, and seasonal pests. State-licensed technicians backed by our partnership with Safe House Property Inspections.</p>
         <p>A licensed technician inspects your home and gives you written findings with photos. If you move forward with treatment, the $29 comes off your bill.</p>
         <p>Ants, rodents, mosquitoes, or something else? Quotes are free.</p>
         <div class="hero-cta-row">
-          <a href="/contact" class="btn btn-primary btn-lg">Request Service</a>
-          <a href="tel:7573678342" class="hero-phone">
+          <div class="hero-cta-pair">
+            <a href="#request" class="btn btn-primary btn-lg">Request Service</a>
+            <div class="comic-burst hero-badge">
+              $29 Termite and Moisture Evaluation. Credited toward any treatment.
+            </div>
+          </div>
+          <a href="tel:+17573678342" class="hero-phone">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Call 757-367-8342
           </a>
         </div>
-        <div class="card-comic" style="margin-top:24px;padding:0;max-width:320px;overflow:hidden;">
-          <img src="/images/pete/pete-hero.webp" alt="Pest Heroes Pete, friendly pest control technician in Pest Heroes uniform, standing in a Hampton Roads yard" width="640" height="1146" style="display:block;width:100%;height:auto;" loading="eager">
-        </div>
       </div>
+      <a class="pete-call" href="tel:+17573678342" aria-label="Call Pest Heroes Pete at 757-367-8342">
+        <img class="pete-burst" src="/images/pete/pete-says-burst.webp" alt="Pest Heroes Pete says: Bugs out. Heroes in!" width="1000" height="646" loading="eager">
+        <span class="pete-tab">
+          <svg class="pete-tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="pete-tab-call">CALL 757-367-8342</span>
+          <span class="pete-tab-now">CALL NOW</span>
+          <span class="pete-tab-tap">TAP TO CALL</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 2. Request Service form -->
+  <section class="section section-light" id="request">
+    <div class="container request-wrap">
       <div class="hero-card">
         <h3>Request Service</h3>
         <p>We respond within one business day</p>

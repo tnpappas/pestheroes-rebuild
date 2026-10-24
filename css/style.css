@@ -452,6 +452,7 @@ ul { list-style: none; }
   gap: 6px;
   font-weight: 700;
   color: var(--color-dark);
+  white-space: nowrap;
 }
 
 .nav-phone svg {
@@ -541,6 +542,14 @@ body.theme-comic .hero::after {
   align-items: center;
 }
 
+/* the Request Service button and the $29 badge share one line */
+.hero-cta-pair {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
 .hero-phone {
   display: flex;
   align-items: center;
@@ -556,6 +565,270 @@ body.theme-comic .hero::after {
   width: 24px;
   height: 24px;
 }
+
+/* === Homepage hero scene (full bleed round 3 redesign) === */
+.hero.hero-scene {
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: var(--color-navy);
+}
+
+/* the scene image replaces the old patterned hero background on this page only */
+.hero.hero-scene::before,
+.hero.hero-scene::after {
+  content: none;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right top;
+  z-index: 0;
+}
+
+.hero-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to right,
+    rgba(0, 36, 144, 0.95) 0%,
+    rgba(0, 36, 144, 0) 58%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 26px 24px;
+}
+
+.hero-scene .hero-content {
+  width: 32%;
+  max-width: 32%;
+}
+
+.hero-scene .hero-content h1 {
+  font-size: 2.35rem;
+  line-height: 1.05;
+  margin-bottom: 0.45rem;
+}
+
+.hero-scene .hero-content p {
+  font-size: 16px;
+  line-height: 1.45;
+  margin-bottom: 0.65rem;
+  max-width: 100%;
+}
+
+.hero-scene .hero-cta-row {
+  margin-top: 8px;
+}
+
+.hero-subhead {
+  font-family: var(--font-subhead);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  color: var(--color-yellow);
+  margin-bottom: 0.45rem;
+}
+
+/* Speech burst call link: sits in the open space between the copy column and Pete */
+.pete-call {
+  position: absolute;
+  top: 24px;
+  left: calc(32% + 25px);
+  width: min(360px, calc(13% + 145px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  text-decoration: none;
+  transition: transform 0.18s ease;
+}
+
+.pete-call:hover,
+.pete-call:focus-visible {
+  transform: scale(1.03);
+}
+
+.pete-call:focus-visible {
+  outline: 3px solid var(--color-white);
+  outline-offset: 6px;
+}
+
+.pete-burst {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(4px 4px 0 rgba(17, 17, 17, 0.85));
+}
+
+.pete-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: -12px;
+  padding: 8px 16px;
+  background: var(--color-red);
+  color: var(--color-white);
+  border: var(--comic-border);
+  box-shadow: var(--comic-shadow-sm);
+  font-family: var(--font-subhead);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pete-tab-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.pete-tab-call { display: none; }
+.pete-tab-now { display: none; }
+.pete-tab-tap { display: inline; }
+
+/* $29 badge, sits beside the hero Request Service button in the copy column */
+.hero-badge {
+  position: static;
+  flex: 0 0 auto;
+  width: 110px;
+  height: 110px;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 0.58rem;
+  line-height: 1.12;
+  text-transform: none;
+}
+
+/* Request form section below the hero */
+.request-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .pete-tab-now { display: inline; }
+  .pete-tab-tap { display: none; }
+}
+
+/* the full phone number only shows when the burst is wide enough for it */
+@media (min-width: 1200px) {
+  .pete-tab-call { display: inline; }
+  .pete-tab-now { display: none; }
+}
+
+/* 1024 to 1199: the copy column is narrow here, so the hero runs taller than 640 and the
+   scene scales up, which pulls Pete further left. The burst has to shrink to stay clear. */
+@media (min-width: 1024px) and (max-width: 1099px) {
+  .pete-call {
+    width: calc(60% - 448px);
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1199px) {
+  .pete-call {
+    width: calc(85% - 705px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pete-call { transition: none; }
+  .pete-call:hover,
+  .pete-call:focus-visible { transform: none; }
+}
+
+/* Mobile hero scene: scene image first with the burst over it, then the navy copy block */
+@media (max-width: 1023px) {
+  .hero.hero-scene {
+    display: block;
+    min-height: 0;
+  }
+
+  .hero-inner {
+    position: static;
+    max-width: 100%;
+    padding: 0 0 48px;
+  }
+
+  .hero-bg {
+    position: relative;
+    height: 340px;
+    object-position: 44% top;
+  }
+
+  .hero-fade {
+    display: none;
+  }
+
+  .hero-scene .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 24px 0;
+    background: var(--color-navy);
+  }
+
+  .hero-scene .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-scene .hero-content p {
+    max-width: 100%;
+  }
+
+  .pete-call {
+    top: 16px;
+    left: 12px;
+    width: min(258px, calc(100% - 140px));
+  }
+
+  /* the badge sits beside the Request Service button in the stacked copy block */
+  .hero-badge {
+    width: 96px;
+    height: 96px;
+    padding: 7px;
+    font-size: 0.52rem;
+    line-height: 1.12;
+  }
+}
+
+/* narrow phones: crop further right so Pete's head stays fully in frame */
+@media (max-width: 389px) {
+  .hero-bg { object-position: 52% top; }
+  .pete-call { width: min(258px, calc(100% - 156px)); }
+}
+
+@media (max-width: 339px) {
+  .hero-bg { object-position: 56% top; }
+}
+
+/* under 480px the badge takes its own line, centred directly above the button */
+@media (max-width: 479px) {
+  .hero-cta-pair {
+    flex-direction: column-reverse;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .hero-badge {
+    width: 104px;
+    height: 104px;
+    padding: 8px;
+    font-size: 0.56rem;
+    line-height: 1.12;
+  }
+}
+
 
 /* Hero quote form card: comic card style per HANDOFF.md Section 4 item 1 */
 .hero-card {
@@ -1425,6 +1698,14 @@ body.theme-comic .hero::after {
 
   .hero-cta-row .btn {
     text-align: center;
+  }
+
+  /* keep the badge beside the button on the same line */
+  .hero-cta-pair {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 12px;
   }
 
   .hero-phone {
