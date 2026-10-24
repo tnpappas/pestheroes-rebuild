@@ -215,12 +215,6 @@ ul { list-style: none; }
   box-shadow: var(--comic-shadow);
 }
 
-/* === Hero banner card (full width Pete image under the blue hero) === */
-.hero-banner-card {
-  padding: 0;
-  overflow: hidden;
-}
-
 /* === Comic Burst component (starburst callout, CSS-only) === */
 .comic-burst {
   display: inline-flex;
@@ -562,6 +556,222 @@ body.theme-comic .hero::after {
   width: 24px;
   height: 24px;
 }
+
+/* === Homepage hero scene (full bleed round 3 redesign) === */
+.hero.hero-scene {
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: var(--color-navy);
+}
+
+/* the scene image replaces the old patterned hero background on this page only */
+.hero.hero-scene::before,
+.hero.hero-scene::after {
+  content: none;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  z-index: 0;
+}
+
+.hero-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to right,
+    rgba(0, 36, 144, 0.95) 0%,
+    rgba(0, 36, 144, 0) 58%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+
+.hero-scene .hero-content {
+  width: 45%;
+  max-width: 45%;
+}
+
+.hero-scene .hero-content h1 {
+  font-size: 2.6rem;
+}
+
+.hero-scene .hero-content p {
+  max-width: 480px;
+}
+
+.hero-subhead {
+  font-family: var(--font-subhead);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: var(--color-yellow);
+}
+
+/* Speech burst call link */
+.pete-call {
+  position: absolute;
+  top: 40px;
+  left: 46.5%;
+  width: 440px;
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  text-decoration: none;
+  transition: transform 0.18s ease;
+}
+
+.pete-call:hover,
+.pete-call:focus-visible {
+  transform: scale(1.03);
+}
+
+.pete-call:focus-visible {
+  outline: 3px solid var(--color-white);
+  outline-offset: 6px;
+}
+
+.pete-burst {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(4px 4px 0 rgba(17, 17, 17, 0.85));
+}
+
+.pete-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: -12px;
+  padding: 8px 16px;
+  background: var(--color-red);
+  color: var(--color-white);
+  border: var(--comic-border);
+  box-shadow: var(--comic-shadow-sm);
+  font-family: var(--font-subhead);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.pete-tab-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.pete-tab-call { display: none; }
+.pete-tab-tap { display: inline; }
+
+/* $29 badge, top right corner of the hero scene */
+.hero-badge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 150px;
+  height: 150px;
+  z-index: 4;
+  font-size: 0.72rem;
+  line-height: 1.15;
+  text-transform: none;
+}
+
+/* Request form section below the hero */
+.request-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .pete-tab-call { display: inline; }
+  .pete-tab-tap { display: none; }
+}
+
+/* narrower desktops: keep the burst clear of both the H1 and the $29 badge */
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .pete-call {
+    left: 47%;
+    width: 420px;
+    max-width: 34%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pete-call { transition: none; }
+  .pete-call:hover,
+  .pete-call:focus-visible { transform: none; }
+}
+
+/* Mobile hero scene: scene image first with the burst over it, then the navy copy block */
+@media (max-width: 1023px) {
+  .hero.hero-scene {
+    display: block;
+    min-height: 0;
+  }
+
+  .hero-inner {
+    position: static;
+    max-width: 100%;
+    padding: 0 0 48px;
+  }
+
+  .hero-bg {
+    position: relative;
+    height: 340px;
+  }
+
+  .hero-fade {
+    display: none;
+  }
+
+  .hero-scene .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 32px 24px 0;
+    background: var(--color-navy);
+  }
+
+  .hero-scene .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-scene .hero-content p {
+    max-width: 100%;
+  }
+
+  .pete-call {
+    top: 20px;
+    left: 20px;
+    width: 66%;
+    max-width: min(66%, 400px);
+  }
+
+  .hero-badge {
+    top: 12px;
+    right: 12px;
+    width: 96px;
+    height: 96px;
+    padding: 10px;
+    font-size: 0.56rem;
+    line-height: 1.12;
+  }
+}
+
 
 /* Hero quote form card: comic card style per HANDOFF.md Section 4 item 1 */
 .hero-card {
