@@ -215,6 +215,12 @@ ul { list-style: none; }
   box-shadow: var(--comic-shadow);
 }
 
+/* === Hero banner card (full width Pete image under the blue hero) === */
+.hero-banner-card {
+  padding: 0;
+  overflow: hidden;
+}
+
 /* === Comic Burst component (starburst callout, CSS-only) === */
 .comic-burst {
   display: inline-flex;
