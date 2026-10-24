@@ -452,6 +452,7 @@ ul { list-style: none; }
   gap: 6px;
   font-weight: 700;
   color: var(--color-dark);
+  white-space: nowrap;
 }
 
 .nav-phone svg {
@@ -685,6 +686,7 @@ body.theme-comic .hero::after {
   font-size: 0.95rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .pete-tab-icon {
@@ -693,6 +695,7 @@ body.theme-comic .hero::after {
 }
 
 .pete-tab-call { display: none; }
+.pete-tab-now { display: none; }
 .pete-tab-tap { display: inline; }
 
 /* $29 badge, sits beside the hero Request Service button in the copy column */
@@ -715,8 +718,14 @@ body.theme-comic .hero::after {
 }
 
 @media (min-width: 1024px) {
-  .pete-tab-call { display: inline; }
+  .pete-tab-now { display: inline; }
   .pete-tab-tap { display: none; }
+}
+
+/* the full phone number only shows when the burst is wide enough for it */
+@media (min-width: 1200px) {
+  .pete-tab-call { display: inline; }
+  .pete-tab-now { display: none; }
 }
 
 /* 1024 to 1199: the copy column is narrow here, so the hero runs taller than 640 and the
@@ -803,20 +812,21 @@ body.theme-comic .hero::after {
   .hero-bg { object-position: 56% top; }
 }
 
-/* phones: the badge sits beside the button, sized so both fit on one line */
-@media (min-width: 382px) and (max-width: 768px) {
-  .hero-badge {
-    width: 84px;
-    height: 84px;
-    padding: 6px;
-    font-size: 0.46rem;
-    line-height: 1.1;
+/* under 480px the badge takes its own line, centred directly above the button */
+@media (max-width: 479px) {
+  .hero-cta-pair {
+    flex-direction: column-reverse;
+    align-items: center;
+    flex-wrap: nowrap;
   }
-}
 
-/* very narrow phones: the badge drops below the button rather than overflow */
-@media (max-width: 381px) {
-  .hero-cta-pair { flex-wrap: wrap; }
+  .hero-badge {
+    width: 104px;
+    height: 104px;
+    padding: 8px;
+    font-size: 0.56rem;
+    line-height: 1.12;
+  }
 }
 
 
