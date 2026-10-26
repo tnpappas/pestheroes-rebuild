@@ -1,0 +1,37 @@
+Preview: https://pestheroes-2k456bfw7-troy-pappas-projects.vercel.app
+Deployment: dpl_B6oykWfrTyp4YryNAXmG8BbHFE3r
+Fetched with: vercel curl (Deployment Protection)
+
+/                                                                      bytes= 22032 satisfaction=0 html=True
+/services                                                              bytes= 10542 satisfaction=0 html=True
+/contact                                                               bytes= 12510 satisfaction=0 html=True
+/about                                                                 bytes= 11147 satisfaction=0 html=True
+/faq                                                                   bytes= 13250 satisfaction=0 html=True
+/service-areas                                                         bytes=  7548 satisfaction=0 html=True
+/termite                                                               bytes= 11565 satisfaction=0 html=True
+/seasonal-pest-control                                                 bytes= 10284 satisfaction=0 html=True
+/mosquito-control                                                      bytes= 11261 satisfaction=0 html=True
+/rodent-control                                                        bytes= 14802 satisfaction=0 html=True
+/crawlspace-moisture                                                   bytes= 11060 satisfaction=0 html=True
+/real-estate-wdi                                                       bytes= 10798 satisfaction=0 html=True
+/move-in-treatment                                                     bytes= 10000 satisfaction=0 html=True
+/repair-services                                                       bytes=  9987 satisfaction=0 html=True
+/referral                                                              bytes=  6374 satisfaction=0 html=True
+/privacy-policy                                                        bytes=  6661 satisfaction=0 html=True
+/pest-control                                                          bytes= 11695 satisfaction=0 html=True
+/pest-control-hampton-roads                                            bytes= 10811 satisfaction=0 html=True
+/blog                                                                  bytes= 10972 satisfaction=0 html=True
+/post/does-mosquito-control-actually-work-in-hampton-roads-an-honest-answer bytes= 10048 satisfaction=0 html=True
+/post/termite-swarm-season-in-virginia-beach-what-every-homeowner-needs-to-know bytes= 10563 satisfaction=0 html=True
+/post/pet-safe-pest-control-in-virginia-beach                          bytes=  8366 satisfaction=0 html=True
+/post/why-ongoing-pest-control-is-a-must-in-virginia-beach-norfolk-chesapeake bytes= 10740 satisfaction=0 html=True
+/post/why-quarterly-pest-control-is-a-must-have-for-hampton-roads-homeowners bytes= 10038 satisfaction=0 html=True
+/post/mosquito-control-virginia-beach                                  bytes=  8782 satisfaction=0 html=True
+/post/hampton-roads-pest-control-questions                             bytes=  8413 satisfaction=0 html=True
+/post/top-10-pests-that-homeowners-in-hampton-roads-battle-year-round  bytes= 14392 satisfaction=0 html=True
+/post/hampton-roads-pest-control                                       bytes=  8257 satisfaction=0 html=True
+/post/virginia-beach-crawlspace-issues                                 bytes=  8437 satisfaction=0 html=True
+/post/when-winter-chills-arrive-pests-make-themselves-at-home          bytes= 10808 satisfaction=0 html=True
+/post/from-bites-to-bliss-pest-heroes-mosquito-treatment               bytes=  9151 satisfaction=0 html=True
+
+PATHS=31 ZERO_SATISFACTION=31 TOTAL_SATISFACTION_HITS=0
