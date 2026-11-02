@@ -520,6 +520,10 @@ body.theme-comic .hero::after {
   align-items: center;
 }
 
+.hero .container > * {
+  min-width: 0;
+}
+
 .hero-content h1 {
   color: var(--color-white);
   font-size: 3rem;
@@ -994,7 +998,7 @@ body.theme-comic .hero::after {
 /* === Services Grid === */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: 24px;
 }
 
@@ -1007,6 +1011,7 @@ body.theme-comic .hero::after {
   transition: transform var(--transition), box-shadow var(--transition);
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .service-card:hover {
@@ -1203,6 +1208,7 @@ body.theme-comic .hero::after {
   padding: 20px;
   text-align: center;
   transition: transform var(--transition), box-shadow var(--transition);
+  min-width: 0;
 }
 
 .area-card:hover {
@@ -1422,6 +1428,7 @@ body.theme-comic .hero::after {
   max-width: 800px;
   margin: 0 auto;
   padding: 48px 24px;
+  overflow-wrap: break-word;
 }
 
 .content-page h1 {
@@ -1749,4 +1756,19 @@ body.theme-comic .hero::after {
 /* === Print === */
 @media print {
   .site-header, .cta-section, .site-footer { display: none; }
+}
+
+/* TRO-192: keep card grids inside narrow phone viewports */
+@media (max-width: 400px) {
+  .services-grid,
+  .areas-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .service-card,
+  .area-card {
+    width: 100%;
+    min-width: 0;
+  }
 }
