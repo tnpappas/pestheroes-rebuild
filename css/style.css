@@ -1772,3 +1772,84 @@ body.theme-comic .hero::after {
     min-width: 0;
   }
 }
+
+/* Rodent guide cards (education social cards shown on service pages) */
+.guide-intro {
+  max-width: 800px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.guide-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-black);
+  min-width: 0;
+}
+
+.guide-card-img {
+  display: block;
+  border-bottom: 1.5px solid var(--color-black);
+}
+
+.guide-card-img img {
+  width: 100%;
+  height: auto;
+}
+
+.guide-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+  font-family: var(--font-body);
+}
+
+.guide-card-body h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.guide-card-body ul,
+.guide-card-body ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.guide-card-body ul { list-style: disc; }
+.guide-card-body ol { list-style: decimal; }
+
+.guide-card-body li {
+  margin-bottom: 0.4rem;
+  line-height: 1.55;
+}
+
+.guide-card-body p {
+  line-height: 1.6;
+}
+
+.guide-card-cta {
+  margin-top: auto;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.guide-card-cta a {
+  color: var(--color-red);
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .guide-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
