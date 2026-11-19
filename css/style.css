@@ -2382,3 +2382,183 @@ body.theme-comic .hero::after {
 }
 
 .svc-light .video-embed-caption { color: #555; font-size: 0.95rem; }
+
+/* === Guide components added for the termite page === */
+.svc-figure-portrait { max-width: 420px; justify-self: center; }
+
+.rg-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: var(--comic-border);
+}
+
+.rg-side { display: flex; flex-direction: column; font-family: var(--font-body); }
+.rg-side + .rg-side { border-left: var(--comic-border); }
+
+.rg-side figure {
+  margin: 0;
+  background: var(--color-white);
+  border-bottom: 2px solid var(--color-black);
+  display: flex;
+  justify-content: center;
+}
+
+.rg-side figure img { width: 100%; height: 300px; object-fit: cover; }
+
+.rg-side-body { padding: 24px 28px 28px; }
+
+.rg-tag {
+  display: inline-block;
+  font-family: var(--font-subhead);
+  font-size: 1.05rem;
+  color: var(--color-white);
+  padding: 6px 14px;
+  border: 2px solid var(--color-black);
+  margin-bottom: 14px;
+}
+
+.rg-tag-red { background: var(--color-red); }
+.rg-tag-navy { background: var(--color-navy); }
+
+.rg-dots li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 8px;
+  line-height: 1.55;
+  font-size: 1.05rem;
+}
+
+.rg-dots li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.6em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-red);
+}
+
+.rg-foot {
+  margin: 0;
+  padding: 18px 40px;
+  border-top: 2px solid var(--color-black);
+  background: var(--color-cream);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.rg-foot a,
+.rg-foot-inline a,
+.rg-local a,
+.rg-numlist a { color: var(--color-red); text-decoration: underline; }
+
+.rg-foot-inline { margin-top: 18px; font-weight: 700; }
+
+.rg-body p + h4 { margin-top: 1.25rem; }
+
+/* Formosan alert */
+.rg-alert { border-color: var(--color-red); box-shadow: 6px 6px 0 var(--color-red); }
+.rg-alert .rg-photo { border-right-color: var(--color-red); }
+
+.rg-badge {
+  display: inline-block;
+  background: var(--color-red);
+  color: var(--color-white);
+  font-family: var(--font-subhead);
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+}
+
+.rg-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.rg-tiles > div {
+  background: var(--color-cream);
+  border: 2px solid var(--color-black);
+  padding: 14px 16px;
+}
+
+.rg-tiles dt {
+  font-family: var(--font-subhead);
+  color: var(--color-red);
+  margin-bottom: 4px;
+}
+
+.rg-tiles dd { margin: 0; line-height: 1.5; font-size: 0.98rem; }
+
+/* Numbered conditions list that matches the photo markers */
+.rg-photo-tall { max-height: none; }
+
+.rg-numlist {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  counter-reset: rgnum;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+}
+
+.rg-numlist li {
+  counter-increment: rgnum;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 20px 24px;
+  border-right: 2px solid var(--color-black);
+  border-bottom: 2px solid var(--color-black);
+  line-height: 1.45;
+  font-size: 1.05rem;
+}
+
+.rg-numlist li:nth-child(3n) { border-right: 0; }
+.rg-numlist li:nth-last-child(-n+3) { border-bottom: 0; }
+
+.rg-numlist li::before {
+  content: counter(rgnum);
+  flex: 0 0 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  box-shadow: 0 0 0 2px var(--color-black);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+@media (max-width: 1023px) {
+  .rg-numlist { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rg-numlist li:nth-child(3n) { border-right: 2px solid var(--color-black); }
+  .rg-numlist li:nth-child(2n) { border-right: 0; }
+  .rg-numlist li:nth-last-child(-n+3) { border-bottom: 2px solid var(--color-black); }
+  .rg-numlist li:nth-last-child(-n+2) { border-bottom: 0; }
+  .rg-alert .rg-photo { border-bottom-color: var(--color-red); }
+}
+
+@media (max-width: 640px) {
+  .rg-compare { grid-template-columns: minmax(0, 1fr); }
+  .rg-side + .rg-side { border-left: 0; border-top: var(--comic-border); }
+  .rg-side-body { padding: 20px 22px 22px; }
+  .rg-foot { padding: 16px 22px; }
+  .rg-tiles { grid-template-columns: minmax(0, 1fr); }
+  .rg-numlist { grid-template-columns: minmax(0, 1fr); }
+  .rg-numlist li,
+  .rg-numlist li:nth-child(3n) { border-right: 0; }
+  .rg-numlist li:nth-last-child(-n+3) { border-bottom: 2px solid var(--color-black); }
+  .rg-numlist li:last-child { border-bottom: 0; }
+}
+
+@media (max-width: 640px) {
+  .rg-jump a { flex: 1 1 calc(50% - 6px); font-size: 0.85rem; padding: 10px 8px; }
+  .rg-side figure img { height: 240px; }
+}
