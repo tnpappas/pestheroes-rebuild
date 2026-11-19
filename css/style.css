@@ -1403,22 +1403,22 @@ body.theme-comic .hero::after {
 /* === Page Header (subpages) === */
 .page-header {
   margin-top: var(--header-height);
-  background: var(--color-black);
+  background-color: var(--color-cream);
   border-bottom: var(--comic-border);
-  color: var(--color-white);
+  color: var(--color-black);
   padding: 56px 0;
   text-align: center;
 }
 
 .page-header h1 {
-  color: var(--color-white);
+  color: var(--color-navy);
   margin-bottom: 0.5rem;
 }
 
 .page-header p {
   font-family: var(--font-body);
   font-size: 1.1rem;
-  opacity: 0.85;
+  color: #333;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -2562,3 +2562,58 @@ body.theme-comic .hero::after {
   .rg-jump a { flex: 1 1 calc(50% - 6px); font-size: 0.85rem; padding: 10px 8px; }
   .rg-side figure img { height: 240px; }
 }
+
+
+/* === Light service pages: extra pieces (WDI, crawlspace, mosquito, pest control) === */
+.svc-split-video16 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.svc-video-wide { max-width: none; width: 100%; }
+
+.svc-gap { margin-bottom: 72px; }
+
+.svc-videos { max-width: 1080px; margin: 0 auto 72px; text-align: center; }
+.svc-videos-row { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.svc-videos .svc-video { width: 300px; }
+
+.rg-codes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.rg-codes li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-cream);
+  border: 2px solid var(--color-black);
+  padding: 8px 12px;
+  font-size: 1rem;
+}
+
+.rg-codes b {
+  flex: 0 0 40px;
+  text-align: center;
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding: 2px 0;
+}
+
+a.service-card { display: block; color: inherit; text-decoration: none; }
+a.service-card:hover h3 { color: var(--color-red); }
+
+@media (max-width: 900px) {
+  .svc-split-video16 { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .rg-codes { grid-template-columns: minmax(0, 1fr); }
+  .svc-videos-row { gap: 28px; }
+}
+
+.svc-figure-portrait img { max-height: 560px; object-fit: cover; }
